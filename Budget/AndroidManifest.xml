@@ -32,10 +32,9 @@
         <activity
             android:name="com.example.budget.LoadBudget"
             android:label="@string/app_name" />
+        <activity
+            android:name="com.example.budget.Details"
+            android:label="@string/app_name" />
     </application>
-    
-    <application 
-        android:name="com.xyz.Budget" >
-    </application>>
 
 </manifest>

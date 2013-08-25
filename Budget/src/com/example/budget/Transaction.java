@@ -4,7 +4,9 @@ import java.util.Date;
 
 //a purchase to be added to a category's list of purchases that fall under that category
 /**
- * 
+ * A purchase to be added to a category's list of purchases that fall under that category.
+ * Class is currently not used.  Meant for later addition after I take up more
+ * rewarding projects
  * 
  * @author Brian
  */

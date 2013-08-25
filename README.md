@@ -11,3 +11,5 @@ general interaction with Android objects (intents, activities, dialog boxes, tex
 Note: this project is not complete.  
 I have put it aside since the additions I have planned are repetative and not teaching new things
 (and I am comfortable with the parts I would be repeating).
+
+TODOs listed in the project classes.  Also need to verify inputs are correct.

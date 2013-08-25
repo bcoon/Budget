@@ -43,7 +43,7 @@ public class Details extends Activity {
 			
 			//total
 			TextView total = (TextView) findViewById(R.id.total_amount);
-			title.setText(defaultFormat.format(categoryDetails.getDouble(MainActivity.TAG_TOTAL)));
+			total.setText(defaultFormat.format(categoryDetails.getDouble(MainActivity.TAG_TOTAL)));
 			
 			//remaining
 			TextView remaining = (TextView) findViewById(R.id.amount_left);
