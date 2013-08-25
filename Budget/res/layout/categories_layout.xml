@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:background="@drawable/bg" >
+    
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+    
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:weightSum="2"
+        android:background="@drawable/bg" >
+        
+       	<Button android:id="@+id/addCategory"
+       	    android:text="Add"
+       	    android:layout_weight="1"
+       	    android:layout_height="fill_parent" 
+       	    android:layout_width="match_parent" />
+       	<Button android:id="@+id/removeCategory"
+       	    android:text="Remove"
+       	    android:layout_weight="1"
+       	    android:layout_height="fill_parent" 
+       	    android:layout_width="match_parent" />
+        
+    </LinearLayout>
+
+</LinearLayout>

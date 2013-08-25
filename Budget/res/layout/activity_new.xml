@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg" >
+
+    <Button
+        android:id="@+id/confirmSalaryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/withholdingsInput"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="18dp"
+        android:text="Confirm" />
+
+    <TextView
+        android:id="@+id/namePrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/salaryPrompt"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Budget plan name:"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/namePrompt"
+        android:layout_alignRight="@+id/namePrompt"
+        android:layout_below="@+id/namePrompt"
+        android:layout_marginTop="18dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/salaryPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/nameInput"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="18dp"
+        android:text="Annual salary ($):"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/salaryInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/salaryPrompt"
+        android:layout_alignRight="@+id/nameInput"
+        android:layout_below="@+id/salaryPrompt"
+        android:layout_marginTop="18dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/withholdingsPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/salaryPrompt"
+        android:layout_below="@+id/salaryInput"
+        android:layout_marginTop="18dp"
+        android:text="Withholdings (%):"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/withholdingsInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/salaryInput"
+        android:layout_alignRight="@+id/salaryInput"
+        android:layout_below="@+id/withholdingsPrompt"
+        android:layout_marginTop="18dp"
+        android:ems="10" />
+
+</RelativeLayout>

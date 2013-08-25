@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Title"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <LinearLayout
+        android:id="@+id/total_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/total_amount_msg"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="Category Max"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/total_amount"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="right|center"
+            android:text="amount"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/remaining_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/amount_left_msg"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="left|center"
+            android:text="Amount Left"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/amount_left"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="right|center"
+            android:text="amount"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/spent_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/bg"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/amount_spent_msg"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="left|center"
+            android:text="Amount Spent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_weight="1"
+            android:textSize="20sp" />
+        
+        <TextView
+            android:id="@+id/amount_spent"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="right|center"
+            android:text="amount"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+			android:layout_weight="1"
+            android:textSize="20sp" />
+        
+    </LinearLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/transactions"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:weightSum="2" >
+
+        <Button
+            android:id="@+id/addTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Add transaction" />
+
+        <Button
+            android:id="@+id/changeTotal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="Change total allocated" />
+    </LinearLayout>
+
+</LinearLayout>
