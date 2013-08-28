@@ -45,10 +45,10 @@ public class CategoriesActivity extends ListActivity {
         
         System.out.println("adapter set");
 		
-        System.out.println("loading contents of plan titled: " + MainActivity.planName);
+        System.out.println("loading contents of plan titled: " + MainActivity.getPlanName());
         
 		JSONreader reader = new JSONreader(this);
-		MainActivity.plan = reader.read(MainActivity.planName);
+		MainActivity.setPlan(reader.read(MainActivity.getPlanName()));
 		
 		System.out.println("loaded passed plan");
 		
@@ -85,7 +85,7 @@ public class CategoriesActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
 		//pass the correct category to Details.java to quickly insert the correct info
 		try {
-			String category = MainActivity.plan.getJSONArray(MainActivity.TAG_CATEGORIES).getJSONObject(position).toString();
+			String category = MainActivity.getPlan().getJSONArray(MainActivity.TAG_CATEGORIES).getJSONObject(position).toString();
 			Intent intent = new Intent(this, Details.class);
 			intent.putExtra("category", category);
 			startActivity(intent);
@@ -141,7 +141,7 @@ public class CategoriesActivity extends ListActivity {
 		try {		
 			listItems.removeAll(listItems);
 
-			JSONArray categories = MainActivity.plan.getJSONArray(MainActivity.TAG_CATEGORIES);
+			JSONArray categories = MainActivity.getPlan().getJSONArray(MainActivity.TAG_CATEGORIES);
 			for (int i = 0; i < categories.length(); i++) {
 				listItems.add(categories.getJSONObject(i).getString(MainActivity.TAG_CAT_TITLE));
 			}

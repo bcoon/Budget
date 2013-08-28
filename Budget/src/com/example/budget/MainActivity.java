@@ -22,9 +22,9 @@ public class MainActivity extends Activity {
 
 	static final String ALL_FILES = "files";
 	
-	static JSONObject plan;
-	public static String planName;
-	public static String currentBudget = null;
+	private static JSONObject plan;
+	private static String planName;
+	private static String currentBudget = null;
 	
 	private Button continueButton;
 	private Button newButton;
@@ -140,6 +140,26 @@ public class MainActivity extends Activity {
 		}
 		
 		return  retVal; //returns null if no current plan found
+	}
+
+	public static JSONObject getPlan() {
+		return plan;
+	}
+
+	public static void setPlan(JSONObject plan) {
+		MainActivity.plan = plan;
+	}
+
+	public static String getPlanName() {
+		return planName;
+	}
+
+	public static void setPlanName(String planName) {
+		MainActivity.planName = planName;
+	}
+
+	public static void setCurrentBudget(String currentBudget) {
+		MainActivity.currentBudget = currentBudget;
 	}
 
 }

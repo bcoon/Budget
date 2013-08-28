@@ -32,17 +32,19 @@ public class NewBudgetActivity extends Activity {
 			public void onClick(View v) {
 				
 				//get data from text fields
-				MainActivity.planName = nameInput.getText().toString();
+				MainActivity.setPlanName(nameInput.getText().toString());
 				String salary = salaryInput.getText().toString();
 				String withholdings = withholdingsInput.getText().toString();
 				
-				//create JSONArray that will contain the budget's info
-				MainActivity.plan = new JSONObject();
+				//update JSONObect that will contain the budget's info
 				try {
-					MainActivity.plan.put(MainActivity.TAG_FILENAME, MainActivity.planName);
-					MainActivity.plan.put(MainActivity.TAG_SALARY, salary);
-					MainActivity.plan.put(MainActivity.TAG_WITHHOLDINGS, withholdings);
-					MainActivity.plan.put(MainActivity.TAG_CATEGORIES, new JSONArray());
+					JSONObject tempObj = new JSONObject();
+					tempObj.put(MainActivity.TAG_FILENAME, MainActivity.getPlanName());
+					tempObj.put(MainActivity.TAG_SALARY, salary);
+					tempObj.put(MainActivity.TAG_WITHHOLDINGS, withholdings);
+					tempObj.put(MainActivity.TAG_CATEGORIES, new JSONArray());
+					
+					MainActivity.setPlan(tempObj);
 				} catch (JSONException e) {
 					e.printStackTrace();
 				}
@@ -50,21 +52,21 @@ public class NewBudgetActivity extends Activity {
 				
 				try {
 					//write the plan title to the list of files file
-					JSONwriter.append(MainActivity.planName + "\n", MainActivity.ALL_FILES, NewBudgetActivity.this);
+					JSONwriter.append(MainActivity.getPlanName() + "\n", MainActivity.ALL_FILES, NewBudgetActivity.this);
 					//write the JSON data to the JSON file
-					JSONwriter.write(MainActivity.plan.toString(), MainActivity.planName, NewBudgetActivity.this);
+					JSONwriter.write(MainActivity.getPlan().toString(), MainActivity.getPlanName(), NewBudgetActivity.this);
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
 				
 				//set current plan to be recognized nextTime
-				saveCurrentBudget(MainActivity.planName);
+				saveCurrentBudget(MainActivity.getPlanName());
 
 				//move to activity to create categories
 				System.out.println("creating new intent");
 				
 				Intent intent = new Intent(NewBudgetActivity.this, CategoriesActivity.class);
-				intent.putExtra("fileName", MainActivity.planName);
+				intent.putExtra("fileName", MainActivity.getPlanName());
 				NewBudgetActivity.this.startActivity(intent);
 			}
 		});
@@ -87,6 +89,6 @@ public class NewBudgetActivity extends Activity {
 		
 		editor.commit();
 		
-		MainActivity.currentBudget = budgetName;
+		MainActivity.setCurrentBudget(budgetName);
 	}
 }

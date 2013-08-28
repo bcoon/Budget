@@ -60,10 +60,10 @@ public class LoadBudget extends ListActivity {
         
         //get the contents of the plan
 		JSONreader reader = new JSONreader(getApplicationContext());
-		MainActivity.plan = reader.read(text);
-		MainActivity.planName = text;
+		MainActivity.setPlan(reader.read(text));
+		MainActivity.setPlanName(text);
 		
-		System.out.println("Current plan contents: " + MainActivity.plan.toString());
+		System.out.println("Current plan contents: " + MainActivity.getPlan().toString());
 		
 		//remember the current plan for next time
 		saveCurrentBudget(text);
@@ -135,6 +135,6 @@ public class LoadBudget extends ListActivity {
 		
 		editor.commit();
 		
-		MainActivity.currentBudget = budgetName;
+		MainActivity.setCurrentBudget(budgetName);
 	}
 }

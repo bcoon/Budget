@@ -22,6 +22,8 @@ import android.widget.TextView;
  */
 public class Details extends Activity {
 
+	//TODO calculate, keep track of, and display net monthly income
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

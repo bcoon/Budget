@@ -77,26 +77,29 @@ public class CustomDialog extends Dialog {
 							details.put(MainActivity.TAG_SPENT, 0.00);
 							details.put(MainActivity.TAG_REMAINING, 0.00);
 						
-							MainActivity.plan.getJSONArray(MainActivity.TAG_CATEGORIES).put(details);
+							//update plan
+							JSONObject tempObj = MainActivity.getPlan();
+							tempObj.getJSONArray(MainActivity.TAG_CATEGORIES).put(details);
+							MainActivity.setPlan(tempObj);
 
-							JSONwriter.write(MainActivity.plan.toString(), MainActivity.planName, CustomDialog.this.getContext());
+							JSONwriter.write(MainActivity.getPlan().toString(), MainActivity.getPlanName(), CustomDialog.this.getContext());
 
 							System.out.println("about to read JSONobject");
 
 							JSONreader jsonreader = new JSONreader(CustomDialog.this.getContext());
-							System.out.println(jsonreader.read(MainActivity.planName));
+							System.out.println(jsonreader.read(MainActivity.getPlanName()));
 
 							CategoriesActivity.addItem(viewFromList, categoryTitle);
 
 					} else if (prompt.equals("Name the category to remove")) {		//remove
-						MainActivity.plan = remove(MainActivity.plan, categoryTitle);
+						MainActivity.setPlan(remove(MainActivity.getPlan(), categoryTitle));
 
-						JSONwriter.write(MainActivity.plan.toString(), MainActivity.planName, CustomDialog.this.getContext());
+						JSONwriter.write(MainActivity.getPlan().toString(), MainActivity.getPlanName(), CustomDialog.this.getContext());
 
 						System.out.println("about to print JSONobject");
 
 						JSONreader jsonreader = new JSONreader(CustomDialog.this.getContext());
-						System.out.println(jsonreader.read(MainActivity.planName));
+						System.out.println(jsonreader.read(MainActivity.getPlanName()));
 						
 						CategoriesActivity.removeItem(viewFromList, categoryTitle);
 
